@@ -9,13 +9,14 @@
     </head>
     <body>
         <div id="app">
-            Hello
-
-            <button v-on:click="toggleIsVisible()">Toggle Box</button>
-            <div v-if="isVisible" class="box"> </div>
+            <script type="module">
+                import { Welcome } from 'vue'
+                import MyComponent from './Ca-component.js'
+              
+                createApp(MyComponent).mount('#app')
+            </script>
         </div>
 
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="./js/index.js"></script>
     </body>
 </html>
