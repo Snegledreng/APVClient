@@ -11,19 +11,28 @@
     </head>
 
     <body>
+
     
         <div id="app">
+            <div class="form-group">
+            <input type="submit" value="Skab" class="btn btn-outline-success" />
+            <input type="submit" value="Fortryd"  class="btn btn-outline-secondary"  />
+            <input type="submit" value="Fortryd" class="btn btn-outline-danger"  />
+            </div>
 
-            <div id="border"> <h1 style="text-align: center"> Automatisk plante vander hjemmeside </h1> </div>
+
+
+            <div class="border"> <h1 style="text-align: center"> Automatisk plante vander hjemmeside </h1> </div>
             
-            <script type="module">
-                import { Welcome } from 'vue'
-                import MyComponent from './We-component.js'
-              
-                createApp(MyComponent).mount('#app')
-            </script>
+
         </div>
 
+        <script type="module" src="./We-component.js">
+
+            <h1>hi {{word}}</h1> 
+          
+            Vue.createApp(App).mount('#app');
+        </script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </body>
 </html>

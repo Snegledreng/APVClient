@@ -10,7 +10,9 @@ export default {
 Vue.createApp({
     data() {
         return {
-            isVisible: false
+            isVisible: false,
+
+            word : something
         }
     },
     created() {
