@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Template</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Import Axios -->
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="nav-bar"></div>
+
+      <h1>{{ headline }}</h1>
+      
+      <input v-model="plantid" placeholder="Plant id" type="number">
+      <button v-on:click="getPlantById">Get Plant</button>
+
+      <ul>
+        <li v-for="plant in plants">{{plant.PlantID}} - {{plant.Name}} - {{plant.UserId}}</li>
+      </ul>
+
+
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+
+
+    
+    
+
+  </body>
+</html>
