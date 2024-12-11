@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Vue Template</title>
-    <!-- Import Styles -->
-    <link rel="stylesheet" href="./css/style.css" />
-    <!-- Import Vue.js -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- Import Axios -->
-    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
-  </head>
-  <body>
-    <div id="app">
-      <div class="nav-bar"></div>
 
-      <h1>{{ headline }}</h1>
-      
-      <input v-model="plantid" placeholder="Plant id" type="number">
-      <button @click="getPlantById">Get Plant</button>
+<head>
+  <meta charset="UTF-8" />
+  <title>Vue Template</title>
+  <!-- Import Styles -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <!-- Import Vue.js -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- Import Axios -->
+  <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+</head>
 
-      <ul>
-        <li v-for="plant in plants">
-          <div class="plantcard">
-          Name of plant: {{plant.name}} <br>
-          Desired humidity: {{plant.desiredHumidity}}% <br>
-          Current humidity: {{plant.logliste.slice(-1)[0].humidity}}% <br>
-          Volume of tank: {{plant.waterTankVolume}}ml <br>
-          Current water: {{plant.logliste.slice(-1)[0].remainingwater}}% <br>
-          Ip-address: {{plant.ipAddress}} <br>
-          <img :src="plant.pictureUrl" height="50px">
+<body>
+  <div id="app">
+    <div class="nav-bar"></div>
 
-          <div class="waterremaining">
-                  
-            <div :style="{backgroundColor: 'blue', width:plant.logliste.slice(-1)[0].remainingwater+'%', height:'100%'}">
-            &nbsp;
+    <h1>{{ headline }}</h1>
+
+    <input v-model="plantid" placeholder="Plant id" type="number">
+    <button @click="getPlantById">Get Plant</button>
+
+    <ul>
+      <li v-for="plant in plants">
+        <div class="plantcard">
+          <div style="padding-right: 5%;">
+            Name of plant: {{plant.name}} <br>
+            Desired humidity: {{plant.desiredHumidity}}% <br>
+            Current humidity: {{plant.logliste.slice(-1)[0].humidity}}% <br>
+            Volume of tank: {{plant.waterTankVolume}}ml <br>
+            Current water: {{plant.logliste.slice(-1)[0].remainingwater}}% <br>
+            Ip-address: {{plant.ipAddress}} <br>
+          </div>
+          <div style="margin-top: 10px;">
+            <img :src="plant.pictureUrl" height="100px">
+            <div class="waterremaining">
+              <div :style="{backgroundColor: 'blue', width:plant.logliste.slice(-1)[0].remainingwater+'%', height:'100%'}"> &nbsp;</div>
             </div>
           </div>
         </div>
-        </li>
-      </ul>
+      </li>
+    </ul>
 
 
 
-<!-- 
+    <!-- 
       <ul>
         <li><a href="/APVClient/Welcome/Welcome.html">Home</a></li>
         <div class="dropdown" >
@@ -55,33 +57,33 @@
       </ul> -->
 
 
-      <div class="border">
-        <ul>
-            <li><a href="/APVClient/AddPlant/AddPlant.html">Home</a></li>
-            <button @click="Sort"></button>
-            <button @click="Search"></button>
-        </ul>
+    <div class="border">
+      <ul>
+        <li><a href="/APVClient/AddPlant/AddPlant.html">Home</a></li>
+        <button @click="Sort"></button>
+        <button @click="Search"></button>
+      </ul>
 
       <div>
         <h3>My plants</h3>
         <ul>
-            <li v-for="plant in Plantlist">
-              <div class="border">
+          <li v-for="plant in Plantlist">
+            <div class="border">
               <div>
                 <p>{{plant.Name}}</p>
-                <img src="plant.PictureUrl"style="width:auto;">
+                <img src="plant.PictureUrl" style="width:auto;">
               </div>
               <div>
                 <p>Humidity: {{plant.Humidity}}</p>
                 <p> Water Remaining : {{plant.WaterRemaining}}</p>
-                <div class="border" width="200px" >
-                  
+                <div class="border" width="200px">
+
                   <div width="20%" style="background-color: blue;"></div>
                 </div>
-                
+
               </div>
             </div>
-                 </li>
+          </li>
         </ul>
 
       </div>
@@ -93,8 +95,9 @@
 
 
 
-    
-    
 
-  </body>
+
+
+</body>
+
 </html>
