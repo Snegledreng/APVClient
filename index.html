@@ -23,14 +23,16 @@
         <li v-for="plant in plants">
           <div class="plantcard">
           Name of plant: {{plant.name}} <br>
-          Desired humidity: {{plant.desiredHumidity}} <br>
+          Desired humidity: {{plant.desiredHumidity}}% <br>
+          Current humidity: {{plant.logliste.slice(-1)[0].humidity}}% <br>
           Volume of tank: {{plant.waterTankVolume}} <br>
-          Ipaddress: {{plant.ipAddress}} <br>
+          Current water: {{plant.logliste.slice(-1)[0].remainingwater}} <br>
+          Ip-address: {{plant.ipAddress}} <br>
           <img :src="plant.pictureUrl" height="50px">
 
           <div class="waterremaining">
                   
-            <div  style="background-color: blue; width:37%; height:100%;">
+            <div :style="{backgroundColor: 'blue', width:plant.logliste.slice(-1)[0].remainingwater+'%', height:'100%'}">
             &nbsp;
             </div>
           </div>
