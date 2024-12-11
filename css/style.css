@@ -18,6 +18,25 @@ div.border {
   height: 50%;
 }
 
+div.waterremaining {
+  border: 1px solid black;
+  display: block;
+  width: 200px;
+  height: 50px;
+}
+
+div.plantcard {
+  border: 2px solid black;
+  border-radius:20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 50%;
+  padding-left: 5%;
+  padding-bottom: 10px;
+}
+
 :root {
   --plantwhite: #f8edd6;
   --plantgold: #ebd07e;
