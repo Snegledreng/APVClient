@@ -6,6 +6,7 @@ const app = Vue.createApp({
       headline: "Automatisk Plantevander!",
       plantid: 68,
       plants: [],
+      userid: 141,
     };
   },
   methods: {
@@ -21,6 +22,24 @@ const app = Vue.createApp({
           console.log(error);
         });
     },
+    getAllPlantsFromUser() {
+      uri = baseUrl+"Plant/getall/"+this.userid
+      axios
+        .get(uri)
+        .then((response) => {
+          console.log(response);
+          response.data.forEach(plant => {
+            this.plants.push(plant);
+          })
+          
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    clearPlants() {
+      this.plants = []
+    }
   },
   computed: {
     myComputed() {

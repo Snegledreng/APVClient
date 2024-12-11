@@ -18,8 +18,15 @@
 
     <h1>{{ headline }}</h1>
 
+    Get plant from id: <br>
     <input v-model="plantid" placeholder="Plant id" type="number">
-    <button @click="getPlantById">Get Plant</button>
+    <button @click="getPlantById">Get Plant</button> <br>
+
+    Get all plants from user id: <br>
+    <input v-model="userid" placeholder="User id" type="number">
+    <button @click="getAllPlantsFromUser">Get All Plant With Userid</button> <br>
+
+    <button @click="clearPlants">Clear plantlist</button> <br>
 
     <ul>
       <li v-for="plant in plants">
@@ -35,7 +42,7 @@
           <div style="margin-top: 10px;">
             <img :src="plant.pictureUrl" height="100px">
             <div class="waterremaining">
-              <div :style="{backgroundColor: 'blue', width:plant.logliste.slice(-1)[0].remainingwater+'%', height:'100%'}"> &nbsp;</div>
+              <div :style="{backgroundColor: '#1CA3EC', width:plant.logliste.slice(-1)[0].remainingwater+'%', height:'100%'}"> &nbsp;</div>
             </div>
           </div>
         </div>
@@ -57,7 +64,7 @@
       </ul> -->
 
 
-    <div class="border">
+    <!-- <div class="border">
       <ul>
         <li><a href="/APVClient/AddPlant/AddPlant.html">Home</a></li>
         <button @click="Sort"></button>
@@ -88,7 +95,7 @@
 
       </div>
 
-    </div>
+    </div> -->
 
     <!-- Import App -->
     <script src="./main.js"></script>
