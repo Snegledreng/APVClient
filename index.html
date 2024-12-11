@@ -25,8 +25,8 @@
           Name of plant: {{plant.name}} <br>
           Desired humidity: {{plant.desiredHumidity}}% <br>
           Current humidity: {{plant.logliste.slice(-1)[0].humidity}}% <br>
-          Volume of tank: {{plant.waterTankVolume}} <br>
-          Current water: {{plant.logliste.slice(-1)[0].remainingwater}} <br>
+          Volume of tank: {{plant.waterTankVolume}}ml <br>
+          Current water: {{plant.logliste.slice(-1)[0].remainingwater}}% <br>
           Ip-address: {{plant.ipAddress}} <br>
           <img :src="plant.pictureUrl" height="50px">
 
