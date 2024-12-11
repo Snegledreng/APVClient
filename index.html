@@ -17,7 +17,7 @@
       <h1>{{ headline }}</h1>
       
       <input v-model="plantid" placeholder="Plant id" type="number">
-      <button v-on:click="getPlantById">Get Plant</button>
+      <button @click="getPlantById">Get Plant</button>
 
       <ul>
         <li v-for="plant in plants">
@@ -26,9 +26,59 @@
           Volume of tank: {{plant.waterTankVolume}} <br>
           Ipaddress: {{plant.ipAddress}} <br>
           <img :src="plant.pictureUrl" height="50px">
+
+          <div width="200px" height="50px">
+                  
+            <div width="20%" style="background-color: blue;"></div>
+          </div>
         </li>
       </ul>
 
+
+
+<!-- 
+      <ul>
+        <li><a href="/APVClient/Welcome/Welcome.html">Home</a></li>
+        <div class="dropdown" >
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+              <a href="/APVClient/EditAccount/EditAccount.html">Link 1</a>
+              <a href="/APVClient/">Log out</a>
+            </div>
+          </div>
+      </ul> -->
+
+
+      <div class="border">
+        <ul>
+            <li><a href="/APVClient/AddPlant/AddPlant.html">Home</a></li>
+            <button @click="Sort"></button>
+            <button @click="Search"></button>
+        </ul>
+
+      <div>
+        <h3>My plants</h3>
+        <ul>
+            <li v-for="plant in Plantlist">
+              <div class="border">
+              <div>
+                <p>{{plant.Name}}</p>
+                <img src="plant.PictureUrl"style="width:auto;">
+              </div>
+              <div>
+                <p>Humidity: {{plant.Humidity}}</p>
+                <p> Water Remaining : {{plant.WaterRemaining}}</p>
+                <div class="border" width="200px" >
+                  
+                  <div width="20%" style="background-color: blue;"></div>
+                </div>
+                
+              </div>
+            </div>
+                 </li>
+        </ul>
+
+      </div>
 
     </div>
 
