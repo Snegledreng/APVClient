@@ -20,7 +20,13 @@
       <button v-on:click="getPlantById">Get Plant</button>
 
       <ul>
-        <li v-for="plant in plants">Desired humidity: {{plant.desiredHumidity}} <br>Name of plant: {{plant.name}} <br>{{plant.ipAddress}} <br><img :src="plant.pictureUrl" height="50px"></li>
+        <li v-for="plant in plants">
+          Name of plant: {{plant.name}} <br>
+          Desired humidity: {{plant.desiredHumidity}} <br>
+          Volume of tank: {{plant.waterTankVolume}} <br>
+          Ipaddress: {{plant.ipAddress}} <br>
+          <img :src="plant.pictureUrl" height="50px">
+        </li>
       </ul>
 
 
