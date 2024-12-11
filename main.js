@@ -4,7 +4,7 @@ const app = Vue.createApp({
   data() {
     return {
       headline: "Automatisk Plantevander!",
-      plantid: 44,
+      plantid: 68,
       plants: [],
     };
   },
