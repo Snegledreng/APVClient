@@ -7,38 +7,58 @@ const app = Vue.createApp({
       plantid: 68,
       plants: [],
       userid: 141,
+      isLoggedIn: false,
+      loggedInID: 0,
+      uName: "",
+      password: "",
     };
   },
   methods: {
-    getPlantById() {
-        uri = baseUrl+"Plant/"+this.plantid
-      axios
-        .get(uri)
-        .then((response) => {
-          console.log(response);
-          this.plants.push(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
+    // getPlantById() {
+    //     uri = baseUrl+"Plant/"+this.plantid
+    //   axios
+    //     .get(uri)
+    //     .then((response) => {
+    //       console.log(response);
+    //       this.plants.push(response.data);
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
+    // },
     getAllPlantsFromUser() {
-      uri = baseUrl+"Plant/getall/"+this.userid
+      uri = baseUrl+"Plant/getall/"+this.loggedInID
       axios
         .get(uri)
         .then((response) => {
+          this.plants = response.data;
           console.log(response);
-          response.data.forEach(plant => {
-            this.plants.push(plant);
-          })
-          
         })
         .catch((error) => {
           console.log(error);
         });
     },
-    clearPlants() {
-      this.plants = []
+    logOut() {
+      this.plants = [];
+      isLoggedIn = false;
+      loggedInID = 0;
+    },
+    logIn() {
+    uri = baseUrl+"User/"+this.uName+"/"+this.password
+      axios
+      .get(uri)
+      .then((response) =>{
+        console.log(response);
+        this.isLoggedIn = true;
+        this.loggedInID = response.data
+        console.log(this.loggedInID)
+        this.plants = this.getAllPlantsFromUser(this.loggedInID)
+        this.uName = "";
+        this.password = "";
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     }
   },
   computed: {
