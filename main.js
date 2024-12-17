@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:5233/api/";
+const baseUrl = "https://apv-ddhed7bth8hch4cz.westeurope-01.azurewebsites.net/api/";
 
 const app = Vue.createApp({
   data() {
